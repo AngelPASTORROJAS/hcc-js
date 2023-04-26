@@ -16,39 +16,31 @@ class DataBaseBuilder {
     builder.serialize(() => {
       builder.run(
         `CREATE TABLE IF NOT EXISTS adherents (
-          id INT NOT NULL PRIMARY KEY,
+          id INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
           nom VARCHAR(50) NOT NULL,
           prenom VARCHAR(50) NOT NULL,
           email VARCHAR(100) NOT NULL UNIQUE,
           mot_de_passe VARCHAR(100) NOT NULL,
-          role VARCHAR(20) NOT NULL,
-          date_inscription DATE NOT NULL
-          );`
-      );
-      builder.run(
-        `CREATE TABLE IF NOT EXISTS utilisateurs (
-          id INT NOT NULL PRIMARY KEY,
-          compte_valide BOOLEAN NOT NULL,
-          adherent_id INT NOT NULL,
-          FOREIGN KEY (adherent_id) REFERENCES adherents(id)
-          );`
+          role VARCHAR(20),
+          date_inscription DATE NOT NULL DEFAULT CURRENT_TIMESTAMP
+        );`
       );
       builder.run(
         `CREATE TABLE IF NOT EXISTS actualites (
-              id INT NOT NULL PRIMARY KEY,
-              titre VARCHAR(100) NOT NULL,
-              contenu TEXT NOT NULL,
-              auteur_id INT NOT NULL,
-              FOREIGN KEY (auteur_id) REFERENCES adherents(id)
-              );`
+          id INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
+          titre VARCHAR(100) NOT NULL,
+          contenu TEXT NOT NULL,
+          auteur_id INT NOT NULL,
+          FOREIGN KEY (auteur_id) REFERENCES adherents(id)
+        );`
       );
       builder.run(
         `CREATE TABLE IF NOT EXISTS matchs (
-          id INT NOT NULL PRIMARY KEY,
+          id INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,
           date_match DATETIME NOT NULL,
           score_domicile INT NOT NULL,
           score_visiteur INT NOT NULL
-          );`
+        );`
       );
       builder.run(
         `CREATE TABLE IF NOT EXISTS participations (
@@ -57,9 +49,9 @@ class DataBaseBuilder {
           PRIMARY KEY (joueur_id, match_id),
           FOREIGN KEY (joueur_id) REFERENCES adherents(id),
           FOREIGN KEY (match_id) REFERENCES matchs(id)
-          );`
-          );
-        });
+        );`
+      );
+    });
     return builder;
   }
 

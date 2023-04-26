@@ -5,5 +5,8 @@ const router = express.Router();
 router.get("", function (_req, res) {
     AdherentController.getAdherents(_req, res)
 });
+router.post("", function (req, res) {
+    AdherentController.createAdherent(req, res);
+  });  
 
 module.exports = router;
