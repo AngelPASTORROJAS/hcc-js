@@ -60,7 +60,6 @@ class DataBaseBuilder {
           );`
           );
         });
-        console.log(builder);
     return builder;
   }
 
