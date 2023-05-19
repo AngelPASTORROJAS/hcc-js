@@ -1,15 +1,54 @@
-Api Handball
+# Project API Handball
+Description:
 
-```shell
-#initialitation du project
-npm init -y
+## Environment Variables
 
-# Dépendance
-npm i -S express dotenv dotenv-expand jsonwebtoken sqlite3 express-validator
+To run this project, you will need to add the following environment variables to your .env file
 
-# Dépendance Dev
-#npm i -S -D 
+`DATABASE`
+`PATH_DATABASE`
+`ADMIN`
+`JOUEUR`
+`COACH`
+`CONTRIBUTEUR`
+`SECRETKEY`
+`PORT`
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://link-to-project
 ```
 
-## Annexes:
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
+
+
+## Acknowledgements
 [Convention javascript](https://www.w3schools.com/js/js_conventions.asp)
+
+## Authors
+
+- [@AngelPASTORROJAS](https://github.com/AngelPASTORROJAS)
+
+- [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/angel-daniel-pastor-rojas/)

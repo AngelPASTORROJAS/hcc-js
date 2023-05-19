@@ -25,6 +25,18 @@ class DataBaseBuilder {
           date_inscription DATE NOT NULL DEFAULT CURRENT_TIMESTAMP
         );`
       );
+      builder.run( //fakers adherent
+      `insert into adherents (prenom, nom, email, mot_de_passe) values ('Eugenio', 'Rubinek', 'erubinek0@addthis.com', 'e9FSHJjb25');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Finlay', 'Riatt', 'friatt1@domainmarket.com', 'jBwkKheTK');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Liza', 'Biskupiak', 'lbiskupiak2@google.fr', 'epdoaQpxgTCi');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Edan', 'Mc Meekan', 'emcmeekan3@uol.com.br', 'zIu8kqjIl2');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Margalo', 'Guyonnet', 'mguyonnet4@1und1.de', 'rfi2859se');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Alfonso', 'Worton', 'aworton5@t-online.de', '8cCh0Wr0PNNc');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Delainey', 'Ferenczy', 'dferenczy6@jigsy.com', 'R04kSUZhF3');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Ardella', 'Castan', 'acastan7@clickbank.net', 'VrhfkI8A4m');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Jillian', 'Leverett', 'jleverett8@de.vu', 'IaGGrMj');
+      insert into adherents (prenom, nom, email, mot_de_passe) values ('Johnny', 'Unsworth', 'junsworth9@so-net.ne.jp', 'DZBySfvCZs6d');
+      `);
       builder.run(
         `CREATE TABLE IF NOT EXISTS actualites (
           id INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,

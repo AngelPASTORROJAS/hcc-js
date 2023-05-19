@@ -35,6 +35,16 @@ class AdherentController {
       res.status(500).send();
     }
   }
+
+  static async getAdherentById(req, res){
+    try {
+      const id = req.params.id;
+      if (id < 1) return res.status(400).send("Id invalide");
+      res.send(await AdherentService.getAdherentById(id))
+    } catch (error) {
+      res.status(500).send()
+    }
+  }
 }
 
 module.exports = AdherentController;
